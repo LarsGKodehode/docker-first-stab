@@ -8,7 +8,7 @@ services:
       - 3000:3000
     working_dir: /first-app
     volumes:
-      -./:/first-app
+      - ./:/first-app
     environment:
       - MYSQL_HOST=mysql
       - MYSQL_USER=root
@@ -18,10 +18,10 @@ services:
   mysql:
     image: mysql:5.7
     volumes:
-      - todo-my-sql-data:/var/lib/mysql
+      - todo-mysql-data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=secret
       - MYSQL_DATABASE=todos
 
-volumes:
-  todo-mysql-data
+volumes: 
+  todo-mysql-data:
